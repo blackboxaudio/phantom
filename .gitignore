@@ -22,3 +22,5 @@ project/Backup/
 project/Presets/
 project/Samples/
 project/Desktop.ini
+
+**/cmake-build-debug
