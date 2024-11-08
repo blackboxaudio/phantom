@@ -123,7 +123,7 @@ copy_plugin_binaries() {
     else
         mkdir -p "/c/Program Files/Steinberg/Vst3Plugins/${COMPANY_NAME}"
         rm -f "/c/Program Files/Steinberg/Vst3Plugins/${COMPANY_NAME}/${PLUGIN_NAME}.vst3"
-        cp "./bin/${PLUGIN_NAME}_artefacts/${BUILD_TYPE}/VST3/${PLUGIN_NAME}.vst3/Contents/x86_64-win/${COMPANY_NAME}/${PLUGIN_NAME}.vst3" "/c/Program Files/Steinberg/Vst3Plugins/${COMPANY_NAME}/${PLUGIN_NAME}.vst3" || log_exit "\n[Error] Failed to copy plugin binaries (VST3)"
+        cp "./bin/${PLUGIN_NAME}_artefacts/${BUILD_TYPE}/VST3/${PLUGIN_NAME}.vst3/Contents/x86_64-win/${PLUGIN_NAME}.vst3" "/c/Program Files/Steinberg/Vst3Plugins/${COMPANY_NAME}/${PLUGIN_NAME}.vst3" || log_exit "\n[Error] Failed to copy plugin binaries (VST3)"
         echo -e "[Success] Copied VST3 binary to plugins directory!\n"
     fi
 }
