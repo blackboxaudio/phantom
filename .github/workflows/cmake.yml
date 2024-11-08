@@ -55,14 +55,12 @@ jobs:
     # Uploading artifacts
     - name: Upload VST3 Artifact (Windows)
       if: runner.os == 'Windows'
-      working-directory: ${{runner.workspace}}/phantom
       uses: actions/upload-artifact@v4
       with:
         path: "bin/Phantom_artefacts/Release/VST3/Phantom.vst3/Contents/x86_64-win/Phantom.vst3"
 
     - name: Upload VST3 Artifact (MacOS)
       if: runner.os == 'macOS'
-      working-directory: ${{runner.workspace}}/phantom
       uses: actions/upload-artifact@v4
       with:
         path: "bin/Phantom_artefacts/VST3/Phantom.vst3"
