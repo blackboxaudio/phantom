@@ -68,7 +68,7 @@ build_juce_targets() {
 
     def_name="JUCE_MODAL_LOOPS_PERMITTED"
     def_value="1"
-    sed -i '' "s/#define $def_name.*/#define $def_name $def_value/" modules/juce_core/system/juce_PlatformDefs.h
+    perl -i -pe '' "s/#define $def_name.*/#define $def_name $def_value/" modules/juce_core/system/juce_PlatformDefs.h
 
     echo -e "Configuring JUCE...\n"
     cmake -B bin . || log_exit "\n[Error] Failed to configure JUCE build"
