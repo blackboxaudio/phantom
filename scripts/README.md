@@ -18,7 +18,7 @@ _CAUTION: Each script is intended to be run __only__ from the root directory. Do
 
 This script is responsible for building the plugin from the source code, including gathering the resources necessary to do so (i.e. cloning the JUCE repository). It also has other functionality, which one activates by passing flags when running. See more below...
 
-_NOTE: In order to build the plugin, the environment variables,_ `CMAKE_C_COMPILER` _and_ `CMAKE_CXX_COMPILER`_, __must__ be set. It's typical for this to be a problem for only Windows users (sigh), in which case I recommend the [MSYS2](https://www.msys2.org/) packages._
+_NOTE: In order to build the plugin, the environment variables,_ `CMAKE_C_COMPILER` _and_ `CMAKE_CXX_COMPILER`_, __must__ be set. It's typical for this to be a problem for only Windows users, in which case I recommend the [MSYS2](https://www.msys2.org/) packages._
 
 ### Flag Arguments
 

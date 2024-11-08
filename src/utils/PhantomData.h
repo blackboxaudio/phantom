@@ -15,25 +15,25 @@ namespace PhantomData
     const int            background_pngSize = 114969;
 
     extern const char*   algorhythm_xml;
-    const int            algorhythm_xmlSize = 2561;
+    const int            algorhythm_xmlSize = 2506;
 
     extern const char*   buzzboy_xml;
-    const int            buzzboy_xmlSize = 2511;
+    const int            buzzboy_xmlSize = 2456;
 
     extern const char*   noisetap_xml;
-    const int            noisetap_xmlSize = 2530;
+    const int            noisetap_xmlSize = 2476;
 
     extern const char*   overlord_xml;
-    const int            overlord_xmlSize = 2495;
+    const int            overlord_xmlSize = 2441;
 
     extern const char*   pitcher_xml;
-    const int            pitcher_xmlSize = 2460;
+    const int            pitcher_xmlSize = 2405;
 
     extern const char*   richochet_xml;
-    const int            richochet_xmlSize = 2494;
+    const int            richochet_xmlSize = 2439;
 
     extern const char*   rumbler_xml;
-    const int            rumbler_xmlSize = 2654;
+    const int            rumbler_xmlSize = 2599;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
     const int namedResourceListSize = 9;

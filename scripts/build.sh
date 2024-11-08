@@ -14,8 +14,10 @@ PRECOMPILE_STEP=false
 REMOVE_PREV_BUILD=false
 BUILD_TYPE=Debug
 
-COMPANY_NAME="Black Box DSP"
+COMPANY_NAME="Black Box Audio"
 PLUGIN_NAME=Phantom
+
+JUCE_CODE_COMMIT=545e9f353a6a336c5d1616796024b30d4bbed04b
 
 for i in "$@"; do
     case $i in
@@ -54,9 +56,8 @@ clone_juce_repo() {
 
     cd ./juce || exit 1
 
-    git checkout develop
-    git pull
-    
+    git checkout "$JUCE_CODE_COMMIT"
+
     cd ../
 
     echo -e "\n[Success] Cloned JUCE repository!\n"
@@ -112,15 +113,15 @@ build_plugin_binaries
 copy_plugin_binaries() {
     if [[ ${OSTYPE} == "darwin"* ]]; then
         rm -rf "/Library/Audio/Plug-Ins/VST3/${PLUGIN_NAME}.vst3"
-        cp -r "./bin/${PLUGIN_NAME}_artefacts/VST3/${PLUGIN_NAME}.vst3" "/Library/Audio/Plug-Ins/VST3/${PLUGIN_NAME}.vst3" || log_exit "\n[Error] Failed to copy plugin binaries (VST3)"
+        cp -r "./bin/${PLUGIN_NAME}_artefacts/VST3/${PLUGIN_NAME}.vst3" "/Library/Audio/Plug-Ins/VST3/${COMPANY_NAME}/${PLUGIN_NAME}.vst3" || log_exit "\n[Error] Failed to copy plugin binaries (VST3)"
         echo -e "[Success] Copied VST3 binary to plugins directory!"
 
         rm -rf "/Library/Audio/Plug-Ins/Components/${PLUGIN_NAME}.component"
-        cp -r "./bin/${PLUGIN_NAME}_artefacts/AU/${PLUGIN_NAME}.component" "/Library/Audio/Plug-Ins/Components/${PLUGIN_NAME}.component" || log_exit "\n[Error] Failed to copy plugin binaries (AU)"
+        cp -r "./bin/${PLUGIN_NAME}_artefacts/AU/${PLUGIN_NAME}.component" "/Library/Audio/Plug-Ins/Components/${COMPANY_NAME}/${PLUGIN_NAME}.component" || log_exit "\n[Error] Failed to copy plugin binaries (AU)"
         echo -e "[Success] Copied AU binary to plugins directory!\n"
     else
         rm -f "/c/Program Files/Steinberg/Vst3Plugins/${PLUGIN_NAME}.vst3"
-        cp "./bin/${PLUGIN_NAME}_artefacts/${BUILD_TYPE}/VST3/${PLUGIN_NAME}.vst3/Contents/x86_64-win/${PLUGIN_NAME}.vst3" "/c/Program Files/Steinberg/Vst3Plugins/${PLUGIN_NAME}.vst3" || log_exit "\n[Error] Failed to copy plugin binaries (VST3)"
+        cp "./bin/${PLUGIN_NAME}_artefacts/${BUILD_TYPE}/VST3/${PLUGIN_NAME}.vst3/Contents/x86_64-win/${COMPANY_NAME}/${PLUGIN_NAME}.vst3" "/c/Program Files/Steinberg/Vst3Plugins/${PLUGIN_NAME}.vst3" || log_exit "\n[Error] Failed to copy plugin binaries (VST3)"
         echo -e "[Success] Copied VST3 binary to plugins directory!\n"
     fi
 }
