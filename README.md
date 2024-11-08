@@ -1,6 +1,6 @@
-# Phantom (v.1.0.0-beta)
+# Phantom (v0.1.0)
 
-[![phantom](https://github.com/blackboxdsp/phantom/workflows/phantom/badge.svg)](https://github.com/blackboxdsp/phantom/actions?query=workflow%3Aphantom)
+[![phantom](https://github.com/blackboxaudio/phantom/workflows/phantom/badge.svg)](https://github.com/blackboxaudio/phantom/actions?query=workflow%3Aphantom)
 [![JUCE](https://img.shields.io/badge/JUCE-v6.0.8-ff69b4)](https://juce.com/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
@@ -28,7 +28,7 @@ Phantom is capable of running with any plugin host as long as it supports VST3 o
 
 ## Contributing
 
-Should you discover any bugs or undesirable behavior, please feel free to [open an issue](https://github.com/blackboxdsp/phantom/issues/new) or [submit a pull request](https://github.com/blackboxdsp/phantom/compare). I am happy to accept them as long as they don't alter product direction, otherwise I am completely open to discuss any ideas that you may have regarding Phantom.
+Should you discover any bugs or undesirable behavior, please feel free to [open an issue](https://github.com/blackboxaudio/phantom/issues/new) or [submit a pull request](https://github.com/blackboxaudio/phantom/compare). I am happy to accept them as long as they don't alter product direction, otherwise I am completely open to discuss any ideas that you may have regarding Phantom.
 
 ## Documentation
 

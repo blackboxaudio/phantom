@@ -2,7 +2,7 @@
 
 Thank you for checking out Phantom! The process of installing the plugin is incredibly easy - you just need to copy the appropriate binary files (`Phantom.vst3` for Windows and `Phantom.vst3` or `Phantom.component` for MacOS) to the location on your machine where you typically store these files. 
 
-_NOTE: Phantom is still in development, so it is possible that there could be bugs or crashes... however I'd love to know if that happens, so please file an [issue](https://github.com/blackboxdsp/phantom/issues/new), and I'll take a look at it!_
+_NOTE: Phantom is still in development, so it is possible that there could be bugs or crashes... however I'd love to know if that happens, so please file an [issue](https://github.com/blackboxaudio/phantom/issues/new), and I'll take a look at it!_
 
 ## How To
 
@@ -21,7 +21,7 @@ The actual installation is easy - you just need to copy the appropriate binaries
 
 ## Troubleshooting
 
-If you cannot find your problem below, please file an [issue](https://github.com/blackboxdsp/phantom/issues/new) and I'll take a look at it!
+If you cannot find your problem below, please file an [issue](https://github.com/blackboxaudio/phantom/issues/new) and I'll take a look at it!
 
 - My DAW doesn't recognize the plugin
     - __Windows/MacOS__: Check that your DAW is reading from the path where you copied the plugin binary file(s).

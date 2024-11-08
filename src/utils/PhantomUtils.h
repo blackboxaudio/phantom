@@ -205,9 +205,9 @@ namespace Consts
     constexpr int _TEXT_BOX_WIDTH = 80;
     constexpr int _TEXT_BOX_HEIGHT = 20;
 
-    constexpr char *_COMPANY_NAME = "Black Box DSP";
+    constexpr char *_COMPANY_NAME = "Black Box Audio";
     constexpr char *_PLUGIN_NAME = "Phantom";
-    constexpr char *_PLUGIN_VERSION = "1.0.0-beta";
+    constexpr char *_PLUGIN_VERSION = "0.1.0";
 }
 
 /** The enum specifying different envelope generator types. */

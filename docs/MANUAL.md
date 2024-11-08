@@ -80,4 +80,4 @@ The EGs, like the LFO, apply change over time to other parameters, however they 
 
 ## Troubleshooting
 
-If you discover a bug, it crashes, i.e. anything happens, I'd love to check it out and see what potential solutions exist to fix it. The easiest way to let me know of an issue is by [creating one](https://github.com/blackboxdsp/phantom/issues/new) on Phantom's GitHub repository.
+If you discover a bug, it crashes, i.e. anything happens, I'd love to check it out and see what potential solutions exist to fix it. The easiest way to let me know of an issue is by [creating one](https://github.com/blackboxaudio/phantom/issues/new) on Phantom's GitHub repository.

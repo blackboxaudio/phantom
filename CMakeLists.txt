@@ -2,21 +2,21 @@
 cmake_minimum_required(VERSION 3.15)
 
 # Declaring targets and describing source/ binary directories
-project(Phantom VERSION 1.0.0)
+project(Phantom VERSION 0.1.0)
 
 # Declare dependency on JUCE (as installed on the local system)
 add_subdirectory(juce)
 
 # Define plugin metadata
 juce_add_plugin(Phantom
-        VERSION "1.0.0"
-        COMPANY_NAME "Black Box DSP"
-        COMPANY_WEBSITE "https://blackboxdsp.com"
+        VERSION "0.1.0"
+        COMPANY_NAME "Black Box Audio"
+        COMPANY_WEBSITE "https://bbx-audio.com"
         PRODUCT_NAME Phantom
         PLUGIN_NAME Phantom
-        PLUGIN_MANUFACTURER_CODE Bkbx
+        PLUGIN_MANUFACTURER_CODE BBXA
         PLUGIN_CODE Phtm
-        BUNDLE_ID "com.blackboxdsp.phantom"
+        BUNDLE_ID "com.blackboxaudio.phantom"
         FORMATS VST3 AU AUv3
         VST3_CATEGORIES Instrument Synth
         AU_MAIN_TYPE kAudioUnitType_MusicDevice
