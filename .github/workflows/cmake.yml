@@ -19,7 +19,7 @@ jobs:
     - name: "Preparation"
       uses: actions/checkout@v2
 
-    - name: "1/6: Clone (JUCE)"
+    - name: "1/7: Clone (JUCE)"
       uses: actions/checkout@v2
       with:
         repository: juce-framework/JUCE
@@ -27,23 +27,27 @@ jobs:
         path: ${{runner.workspace}}/phantom/JUCE
   
     # JUCE
-    - name: "2/6: Configuration (JUCE)"
+    - name: "2/7: Preprocessor Definitions"
+      working-directory: ${{runner.workspace}}/phantom/JUCE
+      run: sed -i '' "s/#define JUCE_MODAL_LOOPS_PERMITTED.*/#define JUCE_MODAL_LOOPS_PERMITTED 1/" modules/juce_core/system/juce_PlatformDefs.h
+
+    - name: "3/7: Configuration (JUCE)"
       working-directory: ${{runner.workspace}}/phantom/JUCE
       run: cmake -B bin .
 
-    - name: "3/6: Build (JUCE)"
+    - name: "4/7: Build (JUCE)"
       working-directory: ${{runner.workspace}}/phantom/JUCE
       run: cmake --build bin
 
     # Phantom
-    - name: "4/6: Precompilation (Phantom)"
+    - name: "5/7: Precompilation (Phantom)"
       working-directory: ${{runner.workspace}}/phantom
       run: chmod +x ./scripts/precompile.sh && ./scripts/precompile.sh
 
-    - name: "5/5: Configuration (Phantom)"
+    - name: "6/7: Configuration (Phantom)"
       working-directory: ${{runner.workspace}}/phantom
       run: cmake -B bin .
 
-    - name: "6/5: Build (Phantom)"
+    - name: "7/7: Build (Phantom)"
       working-directory: ${{runner.workspace}}/phantom
       run: cmake --build bin --config ${{ env.BUILD_TYPE }} --target Phantom_All
