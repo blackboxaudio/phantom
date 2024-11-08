@@ -17,10 +17,10 @@ jobs:
 
     steps:
     - name: "Preparation"
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: "1/7: Clone (JUCE)"
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         repository: juce-framework/JUCE
         ref: 2f980209cc4091a4490bb1bafc5d530f16834e58
@@ -51,3 +51,18 @@ jobs:
     - name: "7/7: Build (Phantom)"
       working-directory: ${{runner.workspace}}/phantom
       run: cmake --build bin --config ${{ env.BUILD_TYPE }} --target Phantom_All
+
+    # Uploading artifacts
+    - name: Upload VST3 Artifact (Windows)
+      if: ${{ matrix.os == 'windows-latest' }}
+      working-directory: ${{runner.workspace}}/phantom
+      uses: actions/upload-artifact@v4
+      with:
+        path: "bin/Phantom_artefacts/Release/VST3/Phantom.vst3/Contents/x86_64-win/Phantom.vst3"
+
+    - name: Upload VST3 Artifact (MacOS)
+      if: ${{ matrix.os == 'macos-latest' }}
+      working-directory: ${{runner.workspace}}/phantom
+      uses: actions/upload-artifact@v4
+      with:
+        path: "bin/Phantom_artefacts/VST3/Phantom.vst3"
