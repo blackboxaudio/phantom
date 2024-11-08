@@ -29,7 +29,7 @@ jobs:
     # JUCE
     - name: "2/7: Preprocessor Definitions"
       working-directory: ${{runner.workspace}}/phantom/JUCE
-      run: sed -i '' "s/#define JUCE_MODAL_LOOPS_PERMITTED.*/#define JUCE_MODAL_LOOPS_PERMITTED 1/" modules/juce_core/system/juce_PlatformDefs.h
+      run: perl -i -pe "s/#define JUCE_MODAL_LOOPS_PERMITTED.*/#define JUCE_MODAL_LOOPS_PERMITTED 1/" modules/juce_core/system/juce_PlatformDefs.h
 
     - name: "3/7: Configuration (JUCE)"
       working-directory: ${{runner.workspace}}/phantom/JUCE
