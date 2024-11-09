@@ -81,4 +81,5 @@ target_link_libraries(Phantom PRIVATE
         PhantomData
         juce::juce_audio_utils
         juce::juce_dsp
-        juce::juce_opengl)
+        juce::juce_opengl
+        juce::juce_recommended_config_flags)
