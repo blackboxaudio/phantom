@@ -14,7 +14,7 @@ juce_add_plugin(Phantom
         COMPANY_WEBSITE "https://bbx-audio.com"
         PRODUCT_NAME Phantom
         PLUGIN_NAME Phantom
-        PLUGIN_MANUFACTURER_CODE BBXA
+        PLUGIN_MANUFACTURER_CODE BBxA
         PLUGIN_CODE Phtm
         BUNDLE_ID "com.blackboxaudio.phantom"
         FORMATS VST3 AU AUv3
@@ -61,7 +61,8 @@ target_compile_definitions(Phantom PUBLIC
         JUCE_WEB_BROWSER=0
         JUCE_USE_CURL=0
         JUCE_VST3_CAN_REPLACE_VST2=0
-        JUCE_DISPLAY_SPLASH_SCREEN=0)
+        JUCE_DISPLAY_SPLASH_SCREEN=0
+        JUCE_MODAL_LOOPS_PERMITTED=1)
 
 # Add binary data from resources folder
 juce_add_binary_data(PhantomData HEADER_NAME PhantomData.h NAMESPACE PhantomData SOURCES
