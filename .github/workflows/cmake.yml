@@ -14,6 +14,7 @@ jobs:
 
     env:
       BUILD_TYPE: Release
+      CMAKE_BUILD_PARALLEL_LEVEL: 4
 
     steps:
 
@@ -30,11 +31,11 @@ jobs:
     # JUCE
     - name: Configure JUCE
       working-directory: ${{runner.workspace}}/phantom/JUCE
-      run: cmake -B bin .
+      run: cmake -B bin . -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }}
 
     - name: Build JUCE
       working-directory: ${{runner.workspace}}/phantom/JUCE
-      run: cmake --build bin
+      run: cmake --build bin --parallel 4
 
     # Phantom
     - name: Precompile Phantom
@@ -43,11 +44,11 @@ jobs:
 
     - name: Configure Phantom
       working-directory: ${{runner.workspace}}/phantom
-      run: cmake -B bin .
+      run: cmake -B bin . -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }}
 
     - name: Build Phantom
       working-directory: ${{runner.workspace}}/phantom
-      run: cmake --build bin --config ${{ env.BUILD_TYPE }} --target Phantom_All
+      run: cmake --build bin --parallel 4 --config ${{ env.BUILD_TYPE }} --target Phantom_All
 
       # Windows
     - name: Zip Artifact (Windows)

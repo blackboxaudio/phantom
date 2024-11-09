@@ -67,11 +67,11 @@ build_juce_targets() {
     cd ./juce || exit 1
     
     echo -e "Configuring JUCE...\n"
-    cmake -B bin . || log_exit "\n[Error] Failed to configure JUCE build"
+    cmake -B bin . -DCMAKE_BUILD_TYPE=${BUILD_TYPE} || log_exit "\n[Error] Failed to configure JUCE build"
     echo -e "\n[Success] Configured JUCE build!\n"
 
     echo -e "Building JUCE...\n"
-    cmake --build bin || log_exit "\n[Error] Failed to build JUCE target(s)"
+    cmake --build bin --parallel 4 || log_exit "\n[Error] Failed to build JUCE target(s)"
     echo -e "\n[Success] Built JUCE targets!\n"
 
     cd ../
@@ -100,11 +100,11 @@ fi
 
 build_plugin_binaries() {
     echo -e "Configuring ${PLUGIN_NAME}...\n"
-    cmake -B bin . || log_exit "\n[Error] Failed to configure plugin build"
+    cmake -B bin . -DCMAKE_BUILD_TYPE=${BUILD_TYPE} || log_exit "\n[Error] Failed to configure plugin build"
     echo -e "\n[Success] Configured plugin build!\n"
 
     echo -e "Building ${PLUGIN_NAME}...\n"
-    cmake --build bin --config ${BUILD_TYPE} --target "${PLUGIN_NAME}_All" || log_exit "\n[Error] Failed to build plugin binaries"
+    cmake --build bin --parallel 4 --config ${BUILD_TYPE} --target "${PLUGIN_NAME}_All" || log_exit "\n[Error] Failed to build plugin binaries"
     echo -e "\n[Success] Built plugin binaries!\n"
 }
 
